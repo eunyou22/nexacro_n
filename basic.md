@@ -2,26 +2,26 @@
 # [투비소프트] Nexacro N 기본
 ## <넥사크로스튜디오 구조 설명>
 1. environment
-  - varialbles :  localbrowser에 저장되는데 생성된 변수는 지워주지 않은 이상은 계속 남게됨(보안에 문제가 있을수있음), 평문으로 남음
-  - cookies :  세션 변수는 jsessionid에 정의해줌(값은 서버에서 넣음)
-  - http header : 추가적인 해더값을 넣고 싶을때 추가하여 사용
-  - script
+   - varialbles :  localbrowser에 저장되는데 생성된 변수는 지워주지 않은 이상은 계속 남게됨(보안에 문제가 있을수있음), 평문으로 남음
+   - cookies :  세션 변수는 jsessionid에 정의해줌(값은 서버에서 넣음)
+   - http header : 추가적인 해더값을 넣고 싶을때 추가하여 사용
+   - script
 
 2. typeDefinition 
-  - object  
-    - modeules : 엔진코어
-    - objects : 사용하는 컴포넌트들 (기본은 가장많이 사용되는 컴포넌트들_성능적 이슈로 사용할 컴포넌트들만 추가해서 사용, 나머지들은 추가해서 사용_modules의 comcomp.json에서 +를 눌러 추가해줌)
-  - services : 
-    - Resource Service : 디자이너, 퍼블리셔가 사용하는 곳 
-    - User Service : 일반개발자는 하단 user service /화면, 자바스크립트등의 필요한 디렉토리를 관리하는곳(+눌렀을때 form, js, file 는 디렉토리 관리 나머지는 서비스 url연결)
-  - protocalAdaptors :  기본 프로토콜을 설정하지 않으면 http프로토콜을 사용하지만 아닐경우 프로토콜을 등록해서 사용해줌
-  - DeviceAdaptors: 기본적으로 데이터 입출력의 키보드나 마우스를 제공 하고 추가적으로 음성인식이나 제스처를 추가로 제공해줌
+   - object  
+     - modeules : 엔진코어
+     - objects : 사용하는 컴포넌트들 (기본은 가장많이 사용되는 컴포넌트들_성능적 이슈로 사용할 컴포넌트들만 추가해서 사용, 나머지들은 추가해서 사용_modules의 comcomp.json에서 +를 눌러 추가해줌)
+   - services : 
+     - Resource Service : 디자이너, 퍼블리셔가 사용하는 곳 
+     - User Service : 일반개발자는 하단 user service /화면, 자바스크립트등의 필요한 디렉토리를 관리하는곳(+눌렀을때 form, js, file 는 디렉토리 관리 나머지는 서비스 url연결)
+   - protocalAdaptors :  기본 프로토콜을 설정하지 않으면 http프로토콜을 사용하지만 아닐경우 프로토콜을 등록해서 사용해줌
+   - DeviceAdaptors: 기본적으로 데이터 입출력의 키보드나 마우스를 제공 하고 추가적으로 음성인식이나 제스처를 추가로 제공해줌
 
 3. Application infomation
-  - datasets: 2차원적으로 변수를 지정해주는것으로만 인지하고있으면됨
-  - apllction variavles _ variables : 해당프로젝트의 글로벌 함수정의(environment에서의 varialbles는 localbrowser에 저장되므로 지워주는곳이 있어야하지만/ 메모리에만 저장되어있어서 지워주는 로직은 없어도됨)
+   - datasets: 2차원적으로 변수를 지정해주는것으로만 인지하고있으면됨
+   - apllction variavles _ variables : 해당프로젝트의 글로벌 함수정의(environment에서의 varialbles는 localbrowser에 저장되므로 지워주는곳이 있어야하지만/ 메모리에만 저장되어있어서 지워주는 로직은 없어도됨)
 
-application_application_desktop==> 자동으로 생성되었던 소스들
+    application_application_desktop==> 자동으로 생성되었던 소스들
 --------
 ## <넥사크로스튜디오 기본설명>
 - 자바스크립트 작성 시 스코프 지정해줘야함(this)
@@ -32,45 +32,53 @@ application_application_desktop==> 자동으로 생성되었던 소스들
 
 
 - trace는 어플리케이션 영역이라 스코프를 nexacro.getApplication()로 잡아줘야함.
-```
-ex)
- nexacro.getApplication().trace("안녕");
- var objApp = nexacro.getApplication();
-	objApp.trace("안녕");
-```
+	```
+	ex)
+	 nexacro.getApplication().trace("안녕");
+	 var objApp = nexacro.getApplication();
+		objApp.trace("안녕");
+	```
 
 
 - 속성의 값을 바꿀때는 set_ 를 써주는 거임. 값을 꺼낼때는 get_를 쓰지 않고 속성값만 써줌.
-```
-this.Button00.set_text("TOBESOFT");
-alert(this.Button00.text);
-```
+	```
+	this.Button00.set_text("TOBESOFT");
+	alert(this.Button00.text);
+	```
 	
 - alert, trace는 예외로 스코프를 따로 안써줘도됨.(써주는것이 정석이긴함)
 
-
 - 실제 개발업무에서는 개발을 먼저하고 표준으로 바꿔야할때가 있음=> 표준(명명규칙)에 따라 아이디를 만들어야함 ex) 저장(버튼 : btn-) :btnSave
-```
-property의 id만 바꾸면 오류가 발생한다: this.Button00.set_text("TOBESOFT"); 이런 값이 안바꼈기 때문에..
-그러므로 this.Button00.set_text("TOBESOFT") 식이 아닌 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)의 첫번째 파라미터인 값을 이용하여
-obj.set_text("TOBESOFT"); 이런식으로 짜야 수정할때 쉬워짐.
-```
+	```
+	property의 id만 바꾸면 오류가 발생한다
+	이유 : this.Button00.set_text("TOBESOFT"); 이런 값이 안바꼈기 때문에..
+	해결 : this.Button00.set_text("TOBESOFT") 식이 아닌 
+		 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)의
+		 첫번째 파라미터인 값을 이용하여
+		 obj.set_text("TOBESOFT"); 이런식으로 짜야 수정할때 쉬워짐.
+	```
 
 ------------
 ## <변수선언>
-1. var var1 =""; form변수라 스크립트 영역에서만 사용하는 변수임.(다른 폼에서 참조 할수없음 해당스크립트에서만 접근 가능함.)
-2. this.var2=""; 어느곳에서 접근할수있는 form의 멤버변수 _ 폼과 폼끼리 사용가능
-3. var3  =""; (생략가능한 변수) 글로벌 변수로 form을 닫아도 계속 메모리에 남게 됨. 그러므로 이런건 사용하지 않는것이 좋음._ 마이플렛폼에서는 생략한 변수가 this.var2처럼 되었기때문에 상관 없지만 넥사크로에서는 글로벌로 잡혀버리게된다.
+1. var var1 =""; 
+  - form변수라 스크립트 영역에서만 사용하는 변수임.(다른 폼에서 참조 할수없음 해당스크립트에서만 접근 가능함.)
+
+2. this.var2=""; 
+  - 어느곳에서 접근할수있는 form의 멤버변수 _ 폼과 폼끼리 사용가능
+
+3. var3  =""; 
+  - (생략가능한 변수) 글로벌 변수로 form을 닫아도 계속 메모리에 남게 됨. 그러므로 이런건 사용하지 않는것이 좋음._ 마이플렛폼에서는 생략한 변수가 this.var2처럼 되었기때문에 상관 없지만 넥사크로에서는 글로벌로 잡혀버리게된다.
 
 
 ----------------
 ## <제너레이트 설명>
-프로젝트 오른쪽 눌러 open contain folder을 눌러보면 xml로 생성된것을 볼수 있음
-.xfdl으로만 되면 xml이므로 실행이 안된다. 
-그러나 저장을 할때 output창을 보면 소스가 Generating되어 js파일로 생성해줌 이 js파일로 브라우저에서 볼 수 있었던거임(xfdl와 똑같은 구조로 js로 만들어진것을 볼수 있음)_
-nexacorlib도 생성되는데 엔진코어도 같이 제너레이트가 되어 정상적으로 출력이 되는거임.
-index.html에서 엔진라이브러리를 로딩하고 만든 js가 실행되므로 정상적으로 출력되는것임.
-=> 소스 수정은 js가 아닌 xfdl을 수정하는거임
+	프로젝트 오른쪽 눌러 open contain folder을 눌러보면 xml로 생성된것을 볼수 있음
+	.xfdl으로만 되면 xml이므로 실행이 안된다. 
+	그러나 저장을 할때 output창을 보면 소스가 Generating되어 js파일로 생성해줌
+	이 js파일로 브라우저에서 볼 수 있었던거임(xfdl와 똑같은 구조로 js로 만들어진것을 볼수 있음)
+	nexacorlib도 생성되는데 엔진코어도 같이 제너레이트가 되어 정상적으로 출력이 되는거임.
+	index.html에서 엔진라이브러리를 로딩하고 만든 js가 실행되므로 정상적으로 출력되는것임.
+	=> 소스 수정은 js가 아닌 xfdl을 수정하는거임
 
 -----------------------------------
 ## <전체 제너레이트 방법>
@@ -86,15 +94,15 @@ index.html에서 엔진라이브러리를 로딩하고 만든 js가 실행되므
 ------------------------------------------------
 ## <코드 스니핏 사용 code snippe>
 - 프로그램 시작은 주석으로 시작(script)
-```javascript
-/***********************************************************/
-/* 프 로 그 램 : Hello_Sample.xfldl
-/* 작 성 일 자 : 2020.04.01
-/* 작  성   자 : 홍 길 동
-/* 설       명 : 
-/***********************************************************/
-```
-=> 이런건 코드 스니펫 기능으로 편히 할수 있음 마우스로 드래그 후 복사하고 오른쪽클릭 후  code snippet에 등록 후 하고 name을 입력하면 자동 생성됨
+	```javascript
+	/***********************************************************/
+	/* 프 로 그 램 : Hello_Sample.xfldl
+	/* 작 성 일 자 : 2020.04.01
+	/* 작  성   자 : 홍 길 동
+	/* 설       명 : 
+	/***********************************************************/
+	```
+=> 이런건 코드 스니펫 기능으로 편히 할수 있음 마우스로 드래그 후 복사하고 오른쪽클릭 후  code snippet에 등록 후 하고 name을 입력하면 자동 생성됨  
 => 익스포트해주면 공유가능하다
 
 ## <스크립트 설명>
@@ -157,7 +165,7 @@ ex)div00.form.div01.form.button00
 - tab
   - tab도 동일하게 url 속성에서 링크를 선택해서 개발해야함
 	  (=> 로딩될때 모든탭을 로딩후 완료하는 것이아니라 tab1만 로딩된 후 완료 처리하므로 더 빠르다(tab2부터는 사용자가 누를때마다 로딩됨))
-  - preload true로 바꾸면 모든탭을 로딩 후 완료됬다고 됨(성능이슈로 권하지 않음)
+  - preload true로 바꾸면 모든탭을 로딩 후 완료?다고 됨(성능이슈로 권하지 않음)
   
 - 콤보박스
   - 콤보박스 같은 값 셋팅 : bind innerdataset을 통해 콤보박스 값 셋팅하고 연결되는 값을 binding 시켜줌
@@ -172,16 +180,16 @@ ex)div00.form.div01.form.button00
 -------------------------
 ## <실습연습>
 1. 컨포넌트에 디자인 적용하는 연습
-- 디자인되어있는곳에서 cssclass의 css명 복사후 원하는 곳에 복사
+   - 디자인되어있는곳에서 cssclass의 css명 복사후 원하는 곳에 복사
 2. 정렬하는 엽습
-- align을 사용해서 정렬
+   - align을 사용해서 정렬
 3. 컴포넌트 그리기
-- 그리고 스코프확인하여 잘되는 지 확인
+   - 그리고 스코프확인하여 잘되는 지 확인
 ------------------------------
 ## <데이터 넣기>
 - 상단 컴포넌트에서 dataset 클릭
 
-- 상단의 colums부분을 적어주고 하단 rows에서  샘픍데이터 추가(복붙가능함 많이 만들기)
+- 상단의 colums부분을 적어주고 하단 rows에서  샘?데이터 추가(복붙가능함 많이 만들기)
 
 - 바인딩하는법
   - 마우스로 끌어다가 넣고 해당 아이디 선택 
