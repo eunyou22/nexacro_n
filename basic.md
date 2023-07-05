@@ -1,5 +1,21 @@
 
+![logo](/images/logo.PNG)
+<br><br><br>
 # [투비소프트] Nexacro N 기본
+<br>
+
+## 넥사크로의 장점
+- 통합 프레임워크(Unified Framework)와 자바스크립트 기반의 컴포넌트 제공
+- 하나의 코드로 다양한 환경에 최적화되어 동작하는 애플리케이션 제작 가능
+- 쉬운 UI 개발
+  - 다양한 기본 컴포넌트 제공
+  - 간편한 데이터 바인딩
+  - 통일된 이벤트 처리
+
+--------
+<br><br><br>
+
+
 ## <넥사크로스튜디오 구조 설명>
 1. environment
    - varialbles :  localbrowser에 저장되는데 생성된 변수는 지워주지 않은 이상은 계속 남게됨(보안에 문제가 있을수있음), 평문으로 남음
@@ -23,8 +39,11 @@
 
     application_application_desktop==> 자동으로 생성되었던 소스들
 --------
+<br><br><br>
+
+
 ## <넥사크로스튜디오 기본설명>
-- 자바스크립트 작성 시 스코프 지정해줘야함(this)
+- 자바스크립트 작성 시 스코프 지정해줘야 함 (this)
 
 - quick view로 실행
   - necacro emulator을 통해 모바일에 사용되는 사이즈 를 입력해서 실행환경을 확인해볼수있음
@@ -59,6 +78,9 @@
 	```
 
 ------------
+<br><br><br>
+
+
 ## <변수선언>
 1. var var1 =""; 
   - form변수라 스크립트 영역에서만 사용하는 변수임.(다른 폼에서 참조 할수없음 해당스크립트에서만 접근 가능함.)
@@ -71,6 +93,9 @@
 
 
 ----------------
+<br><br><br>
+
+
 ## <제너레이트 설명>
 	프로젝트 오른쪽 눌러 open contain folder을 눌러보면 xml로 생성된것을 볼수 있음
 	.xfdl으로만 되면 xml이므로 실행이 안된다. 
@@ -80,18 +105,27 @@
 	index.html에서 엔진라이브러리를 로딩하고 만든 js가 실행되므로 정상적으로 출력되는것임.
 	=> 소스 수정은 js가 아닌 xfdl을 수정하는거임
 
+
 -----------------------------------
+<br><br><br>
+
+
 ## <전체 제너레이트 방법>
 상단 Generate-application 클릭
 
 기존 파일 지우고 다시 제너레이트 하는법
 상단 Generate-regenerate-application 클릭
 
-실행 : launch클릭하여 브라우저 선택
+실행 : launch클릭하여 브라우저 선택 <br>
+![launch](/images/launch.PNG)
 
 최종적으로 만드는 목표 : 왼쪽 form의 employees 부분임.
 
+
 ------------------------------------------------
+<br><br><br>
+
+
 ## <코드 스니핏 사용 code snippe>
 - 프로그램 시작은 주석으로 시작(script)
 	```javascript
@@ -102,8 +136,15 @@
 	/* 설       명 : 
 	/***********************************************************/
 	```
-=> 이런건 코드 스니펫 기능으로 편히 할수 있음 마우스로 드래그 후 복사하고 오른쪽클릭 후  code snippet에 등록 후 하고 name을 입력하면 자동 생성됨  
-=> 익스포트해주면 공유가능하다
+  - 이런건 코드 스니펫 기능으로 편히 할수 있음 
+  - 마우스로 드래그 후 복사하고 오른쪽클릭 후  code snippet에 등록 후 하고 name을 입력하면 자동 생성됨  
+  - 지정한 단축키 또는 마우스 우클릭을 통해 적용 가능
+  - 익스포트해주면 공유 가능
+![code-snippet](/images/code_snippet.PNG)
+
+-----------------
+<br><br><br>
+
 
 ## <스크립트 설명>
 - 주요단축키 설명
@@ -111,18 +152,23 @@
   - 블럭선택 : Ctrl+Shift+]
   - 블럭주석 : Ctrl+/
   - 주석해제 : Alt+/
-  - 소스정리 : 전체 선택 마우스 오른쪽클릭 - auto indent
+  - 소스정리 : 전체 선택 마우스 오른쪽클릭 - auto indent / Alt + F8
 
 
 -----------------
-## <Desingn>
--property
+<br><br><br>
+
+
+## \<Design>
+- property
   - 노말체: 엔진에서 기본 제공
   - 볼트체 : 사용자가 변경한것
   - 프라퍼티 하단에 한줄 설명이 나오는데 f1누를시 상세 설명이 나온다(속성에따라 사용할수 있는 환경과 미지원환경을 확인할수 있다)
 
 
+
 -------
+<br><br><br>
 
 ## <컴포넌트들 설명>
 
@@ -149,10 +195,16 @@ ex)div00.form.div01.form.button00
 
 
 ----------------------------
+<br><br><br>
+
+
 ## <nexacoro education화면 보고 바로 개발>
 - 에뮬레이터에서 reload하면 바로 수정된 소스가 바로 적용된다.(껏다 킬 필요 없음)
 - 해당화면에서 view source누르면 해당화면을 바로 수정할수 있는 화면으로 이동
+
 ---------
+<br><br><br>
+
 ## <컴포넌트 몇개 설명> (나머지는 샘플소스를 통해 컴포넌트들을 볼수 있음)
 - maskEdit
   - type 속성 :들어올값의 형식
@@ -177,7 +229,11 @@ ex)div00.form.div01.form.button00
 
 ==> 코드가 고정일때는 innerdataset값을 통해 셋팅하고 유동적으로 바뀔수 있는 경우 bind innerdataset를 통해 db에서 값을 가져와서 값 셋팅
 
+
 -------------------------
+
+<br><br><br>
+
 ## <실습연습>
 1. 컨포넌트에 디자인 적용하는 연습
    - 디자인되어있는곳에서 cssclass의 css명 복사후 원하는 곳에 복사
@@ -185,7 +241,10 @@ ex)div00.form.div01.form.button00
    - align을 사용해서 정렬
 3. 컴포넌트 그리기
    - 그리고 스코프확인하여 잘되는 지 확인
+
 ------------------------------
+<br><br><br>
+
 ## <데이터 넣기>
 - 상단 컴포넌트에서 dataset 클릭
 
@@ -197,12 +256,16 @@ ex)div00.form.div01.form.button00
 
 - 포맷이 안맞을경우 invalid value가 나옴(mask edite는 type과 format을 맞춰줘야함)
 
-- 자바스크립트 없이 속성 값으로만으로 처리가능한 것들
+- 자바스크립트 없이 속성 값만으로 처리가능한 것들
   - properties의 bindable의 visible속성을 통해 자바스크립트 없이 동적으로 처리가능  
    (체크박스 있을시 날짜컴포넌트 보이고안보이고 여부 처리)
   - background속성으로 값이 있을때만 색깔이 있게 하는것도 가능함
 
+
 --------------------------------
+
+<br><br><br>
+
 ## <그리드>
 더블클릭하여 editor팝업을 띄움
 - 속성값 설명
@@ -215,7 +278,10 @@ ex)div00.form.div01.form.button00
 - 콤보컬럼 속성 셋팅 : distplaype :comboText / edittype: combo/ combodataset: 테이블선택/ combocodecol : 코드값선택/ combodatacol : 보이는 값
 
 - 체크박스 속성 셋팅 : distplaype :checkboxcontrol / edittype: checkbox
+  
 ---------------------
+<br><br><br>
+
 ## <grd Expr(기존 bind된 값들을 가지고 연산하여 표현)>
 - body 속성값 text의 set expretion
 - dataset.getRowCount() + '건' : 모든 건수 
@@ -227,6 +293,8 @@ ex)div00.form.div01.form.button00
 - comp.parent.함수 : 자바스크립트에서 만든 함수 값
 
 -------------------
+<br><br><br>
+
 ## <데이터 통신>
 
 - 넥사에서 고객사쪽에 서버에 x-api 설치해줌?
@@ -290,6 +358,9 @@ this.btn_save_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 ```
 
 -----------
+
+<br><br><br>
+
 ## <sync동기 / async비동기 통신>
 
 - sync (성능에 영향을 줌)
@@ -331,19 +402,27 @@ trace(this.ds_emp.getRowCount()); //서버 건수 확인불가
 ```
 
 ---------------
+
+<br><br><br>
+
 ## <Transaction 시 전송되는 데이터 형식>
 - 넥사크로 수정
 var nDataType = 0; // (0: XML타입, 1: 이진 타입, 2: SSV 타입, 3:JSON 타입)
 scope.transaction(sRealSvcID, sURL, sInputDsNm, sOutputDsNm, sArgument, sCallbackFunc, bAsync,
 nDataType, false);
 
+------
 
-----
-## <cross domain>
+<br><br><br>
+
+## \<cross domain>
 화면에서 바라보는 url과 데이터 통신의 url이 다르면 동일출처정책(cross domain)에 위배되어 통신이 되지않는다. 
 하지만 nexcoro runtime environment를 사용해서 테스트하거나
 run environmentt속성에서 local을 선택하면 테스트시 위배를 피할수 있다.
 
 -------
+
+<br><br><br>
+
 ## <패킷확인>
 Fiddler 를 통해 클라이언트에서의 데이터와 서버의 데이터를 객관적으로 볼수 있기때문에 디버깅이 좀더 쉽다.
