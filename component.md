@@ -99,7 +99,7 @@
   - 그리드에디터에서 포맷을 여러개 만들어서 그리드 속성중 formatid로 그리드 포맷을 변경할수 있다.
 ---
 # <실습을통해 PopupDiv 교육>
-  - <PopupDiv>
+  - \<PopupDiv>
   - this.PopupDiv1.closePopup()를통해 닫는 메소드 사용할수 있다
   - 서브페이지(URL로 건 페이지)로 만들 수있는데 popup에서 데이터 를 넘길때 this.parent.parent.PopupDiv2.closePopup(arrRtn); 이런식으로 값에 접근을 해야한다.arrRtn는 array값
   - 기간 달력(시작종료달력)은 기본div가 아니므로 pop달력으로 하는것이 좋다.
